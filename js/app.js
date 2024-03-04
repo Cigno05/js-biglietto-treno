@@ -14,29 +14,37 @@ console.log('Kilometri ' + km);
 
 /*calcolare prezzo in base ai km (0.21 € / km) */
 
-const prezzoPerKm = km * 0.21; //number
+const priceForKm = km * 0.21; //number
 
-console.log('Costo Km dichiarati ' + prezzoPerKm + ' €');
+console.log('Costo Km dichiarati ' + priceForKm + ' €');
 
 
 
 /* dichiariare variante con età impostata dall'utente */
 
-const anni = prompt('Inserire età'); //string
+const age = prompt('Inserire età'); //string
 
-console.log('Età dichiarata ' + anni + ' anni' ); //string
-
-
-
-/* calcolo prezzo del biglietto in bbase agli sconti*/
+console.log('Età dichiarata ' + age + ' anni' ); //string
 
 
-if (anni < 18) {
-    console.log('Prezzo under 18 ' +  (prezzoPerKm - (prezzoPerKm * 0.2)).toFixed(2)); //number
-} else if (anni > 65) {
-    console.log('Prezzo over 65 ' + (prezzoPerKm - (prezzoPerKm * 0.4)).toFixed(2)); //number
+
+
+/*---------sconti sul prezzo del biglietto------------*/
+
+const discount20 = (priceForKm - (priceForKm * 0.2));
+const discount40 = (priceForKm - (priceForKm * 0.4));
+
+
+
+/* calcolo prezzo del biglietto in base agli sconti*/
+
+
+if (age < 18) {
+    console.log('Prezzo under 18 ' +  discount20.toFixed(2)); //number
+} else if (age > 65) {
+    console.log('Prezzo over 65 ' + discount40.toFixed(2)); //number
 } else {
-    console.log('Prezzo Intero ' + prezzoPerKm.toFixed(2)); //number
+    console.log('Prezzo Intero ' + priceForKm.toFixed(2)); //number
 }
 
 
