@@ -8,21 +8,20 @@ L’output del prezzo finale va stampato in console in forma “umana” cioè c
 
 /* dichiarare variante con numero di km impostata dall'utente*/
 
-const km = prompt('Inserire numero di Km che si vogliono percorrere'); //string
+const km = parseInt(prompt('Inserire numero di Km che si vogliono percorrere')); //number
 
 console.log('Kilometri ' + km);
 
 /*calcolare prezzo in base ai km (0.21 € / km) */
 
-const priceForKm = km * 0.21; //number
-
-console.log('Costo Km dichiarati ' + priceForKm + ' €');
+const priceForKm = km * 0.21; //string
 
 
+console.log('Costo Km dichiarati ' + priceForKm + ' €'); // string
 
 /* dichiariare variante con età impostata dall'utente */
 
-const age = prompt('Inserire età'); //string
+const age = parseInt(prompt('Inserire età')); //string
 
 console.log('Età dichiarata ' + age + ' anni' ); //string
 
@@ -31,8 +30,8 @@ console.log('Età dichiarata ' + age + ' anni' ); //string
 
 /*---------sconti sul prezzo del biglietto------------*/
 
-const discount20 = (priceForKm - (priceForKm * 0.2));
-const discount40 = (priceForKm - (priceForKm * 0.4));
+const discountUnder18 = (priceForKm - (priceForKm * 0.2)); //number
+const discountOver65 = (priceForKm - (priceForKm * 0.4)); //number
 
 
 
@@ -40,10 +39,10 @@ const discount40 = (priceForKm - (priceForKm * 0.4));
 
 
 if (age < 18) {
-    console.log('Prezzo under 18 ' +  discount20.toFixed(2)); //number
+    console.log('Prezzo under 18 ' +  discountUnder18.toFixed(2)); //number
 } else if (age > 65) {
-    console.log('Prezzo over 65 ' + discount40.toFixed(2)); //number
-} else {
+    console.log('Prezzo over 65 ' + discountOver65.toFixed(2)); //number
+} else { // 35
     console.log('Prezzo Intero ' + priceForKm.toFixed(2)); //number
 }
 
@@ -51,7 +50,7 @@ if (age < 18) {
 
 
 
-
+/* bonus: non calcolare sempre lo sconto anche quando non serve */
 
 
 
