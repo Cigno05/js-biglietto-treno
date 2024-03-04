@@ -14,7 +14,7 @@ console.log('Kilometri ' + km);
 
 /*calcolare prezzo in base ai km (0.21 € / km) */
 
-const prezzoPerKm = (km * 0.21).toFixed(2); //number
+const prezzoPerKm = km * 0.21; //number
 
 console.log('Costo Km dichiarati ' + prezzoPerKm + ' €');
 
@@ -36,7 +36,7 @@ if (anni < 18) {
 } else if (anni > 65) {
     console.log('Prezzo over 65 ' + (prezzoPerKm - (prezzoPerKm * 0.4)).toFixed(2)); //number
 } else {
-    console.log('Prezzo Intero ' + prezzoPerKm); //number
+    console.log('Prezzo Intero ' + prezzoPerKm.toFixed(2)); //number
 }
 
 
