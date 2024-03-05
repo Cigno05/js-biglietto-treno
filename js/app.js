@@ -12,6 +12,16 @@ const km = parseInt(prompt('Inserire numero di Km che si vogliono percorrere'));
 
 console.log('Kilometri ' + km);
 
+
+/* dichiariare variante con età impostata dall'utente */
+
+const age = parseInt(prompt('Inserire età')); //number
+
+console.log('Età dichiarata ' + age + ' anni' ); //string
+
+
+
+
 /*calcolare prezzo in base ai km (0.21 € / km) */
 
 const priceForKm = km * 0.21; //string
@@ -19,14 +29,12 @@ const priceForKm = km * 0.21; //string
 
 console.log('Costo Km dichiarati ' + priceForKm + ' €'); // string
 
-/* dichiariare variante con età impostata dall'utente */
-
-const age = parseInt(prompt('Inserire età')); //string
-
-console.log('Età dichiarata ' + age + ' anni' ); //string
 
 
 
+/*-------VALIDATION-------------*/
+
+if (km > 0 && anni > 0 && !isNaN(km) && !isNaN(anni)) {
 
 /*---------sconti sul prezzo del biglietto------------*/
 
@@ -47,7 +55,7 @@ if (age < 18) {
 }
 
 
-
+}
 
 
 /* bonus: non calcolare sempre lo sconto anche quando non serve */
